@@ -13,18 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('routes', function (Blueprint $table) {
-            $table->id();
+        Schema::create('trains', function (Blueprint $table) {
+            $table -> id();
 
-            $table->string('company', 50);
-            $table->string('start_station', 50);
-            $table->string('end_station', 50);
-            $table->dateTime('start_time');
-            $table->dateTime('end_time');
-            $table->string('train_code', 8) -> unique();
-            $table->integer('coach_number', 20);
-            $train->boolean('in_time') -> default(true);
-            $train->boolean('deleted') -> default(false);
+            $table -> string('company', 50);
+            $table -> string('start_station', 50);
+            $table -> string('end_station', 50);
+            $table -> dateTime('start_time');
+            $table -> dateTime('end_time');
+            $table -> string('train_code', 8) -> unique();
+            $table ->integer('coach_number');
+            $table -> boolean('in_time') -> default(true);
+            $table -> boolean('deleted') -> default(false);
 
 
             // - azienda
@@ -38,7 +38,7 @@ return new class extends Migration
             // - cancellato
 
 
-            $table->timestamps();
+            $table -> timestamps();
         });
     }
 
